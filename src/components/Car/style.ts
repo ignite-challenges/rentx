@@ -32,7 +32,7 @@ export const Name = styled.Text`
 export const About = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 16px;
+  margin-top: 16px;
 `;
 
 export const Rent = styled.View`
@@ -54,7 +54,9 @@ export const Price = styled.Text`
 
 export const Type = styled.View``;
 
-export const CardImage = styled.Image`
+export const CardImage = styled.Image.attrs({
+  resizeMode: 'contain'
+})`
   width: 167px;
   height: 85px;
 `;
