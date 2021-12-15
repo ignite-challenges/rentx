@@ -7,7 +7,7 @@ import {
 
 interface Props {
   title: string;
-  color: string;
+  color?: string;
 }
 
 export const Button: React.FC<Props> = ({ title, color, ...rest }) => {

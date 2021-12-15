@@ -11,7 +11,7 @@ import {
 
 import theme from './src/global/styles/theme';
 
-import { CarDetails } from './src/screens/CarDetails';
+import { Scheduling } from './src/screens/Scheduling';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Scheduling />
     </ThemeProvider>
   );
 }
