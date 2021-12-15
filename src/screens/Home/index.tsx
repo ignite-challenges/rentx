@@ -10,7 +10,8 @@ import {
   Container,
   Header,
   HeaderContent,
-  TotalCars
+  TotalCars,
+  CarList
 } from './styles';
 
 export const Home: React.FC = () => {
@@ -37,7 +38,12 @@ export const Home: React.FC = () => {
           <TotalCars>Total de 12 carros</TotalCars>
         </HeaderContent>
       </Header>
-      <Car data={data} />
+
+      <CarList 
+        data={[1,2,3]}
+        keyExtractor={item => String(item)}
+        renderItem={({ item }) => <Car data={data} />}
+      />
     </Container>
   );
 };
