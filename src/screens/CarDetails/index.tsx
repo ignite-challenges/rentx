@@ -3,6 +3,7 @@ import React from 'react';
 import { BackButton } from '../../components/BackButton';
 import { ImageSlider } from '../../components/ImageSlider';
 import { Accessory } from '../../components/Accessory';
+import { Button } from '../../components/Button';
 
 import speedSVG from '../../assets/speed.svg';
 import accelarationSVG from '../../assets/acceleration.svg';
@@ -24,7 +25,8 @@ import {
   Period,
   Price,
   About,
-  Acessories
+  Acessories,
+  Footer
 } from './styles';
 
 export const CarDetails: React.FC = () => {
@@ -63,6 +65,9 @@ export const CarDetails: React.FC = () => {
           É um belíssimo carro para quem gosta de acelerar.
         </About>
       </Content>
+      <Footer>
+        <Button title='Confirmar' />
+      </Footer>
     </Container>
   );
 };
