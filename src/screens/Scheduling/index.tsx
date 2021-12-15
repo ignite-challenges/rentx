@@ -4,6 +4,7 @@ import { useTheme } from 'styled-components/native';
 
 import { BackButton } from '../../components/BackButton';
 import { Button } from '../../components/Button';
+import { Calendar } from '../../components/Calendar';
 
 import ArrowSVG from '../../assets/arrow.svg';
 
@@ -49,7 +50,7 @@ export const Scheduling: React.FC = () => {
         </RentalPeriod>
       </Header>
       <Content>
-
+        <Calendar />
       </Content>
       <Footer>
         <Button title="Confirmar"  />
