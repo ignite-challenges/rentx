@@ -53,7 +53,7 @@ export const Scheduling: React.FC = () => {
         <Calendar />
       </Content>
       <Footer>
-        <Button title="Confirmar"  />
+        <Button title="Confirmar" />
       </Footer>
     </Container>
   );

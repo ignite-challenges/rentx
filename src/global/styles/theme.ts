@@ -17,17 +17,17 @@ export default {
     },
     success: '#03b252',
     shape: {
-      primary: '#e1ee8',
-      dark: '#29292e' 
+      primary: '#e1e1e8',
+      dark: '#29292e'
     },
   },
   fonts: {
     inter: {
-      regular: 'Inter_400Regular', 
+      regular: 'Inter_400Regular',
       medium: 'Inter_500Medium'
     },
     archivo: {
-      regular: 'Archivo_400Regular', 
+      regular: 'Archivo_400Regular',
       medium: 'Archivo_500Medium',
       semibold: 'Archivo_600SemiBold',
     }
