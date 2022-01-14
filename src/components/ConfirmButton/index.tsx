@@ -1,6 +1,5 @@
 import React from 'react';
 import { RectButtonProps } from 'react-native-gesture-handler';
-import { useTheme } from 'styled-components/native';
 
 import {
   Container,
@@ -9,14 +8,11 @@ import {
 
 interface Props extends RectButtonProps {
   title: string;
-  color?: string;
 }
 
-export const Button: React.FC<Props> = ({ title, color, ...rest }) => {
-  const theme = useTheme();
-
+export const ConfirmButton: React.FC<Props> = ({ title, ...rest }) => {
   return (
-    <Container {...rest} color={color || theme.colors.main.primary}>
+    <Container {...rest}>
       <Title>{title}</Title>
     </Container>
   );

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { StatusBar } from 'react-native';
 import { useTheme } from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 
 import { BackButton } from '../../components/BackButton';
 import { Button } from '../../components/Button';
@@ -21,7 +22,12 @@ import {
 } from './styles';
 
 export const Scheduling: React.FC = () => {
+  const { navigate } = useNavigation();
   const theme = useTheme();
+
+  const handleConfirmDate = useCallback(() => {
+    navigate('SchedulingDetails')
+  }, []);
 
   return (
     <Container>
@@ -53,7 +59,10 @@ export const Scheduling: React.FC = () => {
         <Calendar />
       </Content>
       <Footer>
-        <Button title="Confirmar" />
+        <Button 
+          title="Confirmar" 
+          onPress={handleConfirmDate} 
+        />
       </Footer>
     </Container>
   );

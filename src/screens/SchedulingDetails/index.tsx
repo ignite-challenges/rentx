@@ -1,4 +1,7 @@
 import React, { useCallback } from 'react';
+import { Feather } from '@expo/vector-icons';
+import { useTheme } from 'styled-components';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -26,21 +29,31 @@ import {
   Rent,
   Period,
   Price,
-  About,
   Acessories,
-  Footer
+  Footer,
+  CalendarIcon,
+  RentalPeriod,
+  DateInfo, 
+  DateTitle,
+  DateValue,
+  RentalPrice,
+  RentalPriceLabel, 
+  RentalPriceDetails,
+  RentalPriceQuota,
+  RentalPriceTotal
 } from './styles';
 
-export const CarDetails: React.FC = () => {
+export const SchedulingDetails: React.FC = () => {
   const { navigate } = useNavigation();
+  const theme = useTheme();
 
-  const handleChooseRentalPeriod = useCallback(() => {
-    navigate('Scheduling')
+  const handleConfirmRentNow = useCallback(() => {
+    navigate('SchedulingComplete')
   }, []);
 
   return (
     <Container>
-      <StatusBar 
+      <StatusBar
         barStyle="dark-content"
         backgroundColor='transparent'
         translucent
@@ -51,7 +64,7 @@ export const CarDetails: React.FC = () => {
       <CardImages>
         <ImageSlider 
           imagesUrl={['https://i.pinimg.com/originals/74/6b/fc/746bfc39433580c9f9041994e5282b0b.jpg']}
-        />
+        /> 
       </CardImages>
       <Content>
         <Details>
@@ -72,16 +85,44 @@ export const CarDetails: React.FC = () => {
           <Accessory icon={exchangeSVG} name="Auto" />
           <Accessory icon={peopleSVG} name="2 pessoas" />
         </Acessories>
-        <About>
-          Este é automóvel desportivo. Surgiu do lendário 
-          touro de lide indultado na praça Real Maestranza de Sevilla.
-          É um belíssimo carro para quem gosta de acelerar.
-        </About>
+        <RentalPeriod>
+          <CalendarIcon>
+            <Feather 
+              name="calendar"
+              size={RFValue(24)}
+              color={theme.colors.shape.primary}
+            />
+          </CalendarIcon>
+
+          <DateInfo>
+            <DateTitle>DE</DateTitle>
+            <DateValue>18/06/2021</DateValue>
+          </DateInfo>
+
+          <Feather 
+            name="chevron-right"
+            size={RFValue(10)}
+            color={theme.colors.text.primary}
+          />
+
+          <DateInfo>
+            <DateTitle>DE</DateTitle>
+            <DateValue>18/06/2021</DateValue>
+          </DateInfo>
+        </RentalPeriod>
+        <RentalPrice>
+          <RentalPriceLabel>TOTAL</RentalPriceLabel>
+          <RentalPriceDetails>
+            <RentalPriceQuota>R$ 580 x3 diaria</RentalPriceQuota>
+            <RentalPriceTotal>R$ 2.900</RentalPriceTotal>
+          </RentalPriceDetails>
+        </RentalPrice>
       </Content>
       <Footer>
         <Button 
-          title='Escolher periodo do aluguel' 
-          onPress={handleChooseRentalPeriod} 
+          title='Alugar agora' 
+          color={theme.colors.success} 
+          onPress={handleConfirmRentNow}
         />
       </Footer>
     </Container>
